@@ -1,6 +1,6 @@
 require('dotenv').config();
-const { ENVIRONMENT } = process.env;
-const PORT = process.env || 3001;
+// const { ENVIRONMENT } = process.env;
+const port = process.env || 3001;
 const cors = require('cors');
 const express = require('express');
 const morgan = require('morgan');
@@ -9,7 +9,7 @@ const bodyParser = require('body-parser');
 const app = express();
 
 // middleware
-app.use(morgan(ENVIRONMENT));
+app.use(morgan('combined'));
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -27,5 +27,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
+  console.log(`Server listening on port ${port}`);
 })
