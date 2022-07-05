@@ -1,6 +1,6 @@
 require('dotenv').config();
 // const { ENVIRONMENT } = process.env;
-const port = process.env || 3001;
+const port = process.env.port || 3001;
 const cors = require('cors');
 const express = require('express');
 const morgan = require('morgan');
