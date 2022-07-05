@@ -20,12 +20,12 @@ const db = require('./configs/db.config');
 const phrases = require('./routes/phraseRoutes');
 
 // routes
-app.use('/phrases', phrases(db))
+app.use('/phrases', phrases(db));
 
 app.get('/', (req, res) => {
   res.send('Hello world!');
-})
+});
 
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);
-})
+});
